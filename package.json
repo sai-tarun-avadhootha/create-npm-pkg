@@ -1,6 +1,6 @@
 {
   "name": "@sai-tarun/create-npm-pkg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "keywords": [
     "NPM",
     "package",
@@ -20,7 +20,7 @@
   "author": "Sai Tarun Avadhootha",
   "license": "MIT",
   "bin": {
-    "@sai-tarun/create-npm-pkg": "./dist/index.js"
+    "create-npm-pkg": "./dist/index.js"
   },
   "files": [
     "dist"

@@ -82,6 +82,20 @@ This will create a changeset file that will be used to create a new version.
 
 This will trigger a github action to check if the changes are valid.
 
+### Before running the local-release script, make sure you are logged in to npm
+
+This will show the username of the npm user.
+
+```bash
+npm whoami
+```
+
+If you are not logged in, you can login using the following command:
+
+```bash
+npm login
+```
+
 ### Run the local-release script
 
 ```bash
