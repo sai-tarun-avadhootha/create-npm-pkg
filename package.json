@@ -1,0 +1,65 @@
+{
+  "name": "@sai-tarun/create-npm-pkg",
+  "version": "0.0.0",
+  "keywords": [
+    "NPM",
+    "package",
+    "pkg",
+    "Create NPM Package",
+    "Package Starter Kit"
+  ],
+  "description": "Create npm packages with one command",
+  "homepage": "https://github.com/sai-tarun-avadhootha/create-npm-pkg",
+  "bugs": {
+    "url": "https://github.com/sai-tarun-avadhootha/create-npm-pkg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sai-tarun-avadhootha/create-npm-pkg.git"
+  },
+  "author": "Sai Tarun Avadhootha",
+  "license": "MIT",
+  "bin": {
+    "@sai-tarun/create-npm-pkg": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "ci": "npm run build && npm run check-format",
+    "check-format": "prettier --check .",
+    "dev": "ncc build ./index.ts -w -o dist/",
+    "prerelease": "node scripts/rm.mjs dist",
+    "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
+    "build": "npm run release",
+    "prepublishOnly": "npm run ci",
+    "local-release": "changeset version && changeset publish",
+    "lint-fix": "npm prettier -w --plugin prettier-plugin-tailwindcss 'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}'"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.4",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "20.14.2",
+    "@types/prompts": "2.4.2",
+    "@types/tar": "6.1.13",
+    "@types/validate-npm-package-name": "4.0.2",
+    "@vercel/ncc": "0.38.1",
+    "async-sema": "^3.1.1",
+    "ci-info": "4.0.0",
+    "commander": "12.1.0",
+    "conf": "13.0.1",
+    "cross-spawn": "^7.0.6",
+    "fast-glob": "3.3.1",
+    "picocolors": "1.0.0",
+    "prettier-plugin-tailwindcss": "0.6.2",
+    "prompts": "2.4.2",
+    "tar": "7.4.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "5.0.1"
+  },
+  "engines": {
+    "node": ">=20.14.2"
+  }
+}
